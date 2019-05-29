@@ -34,7 +34,7 @@ Prerequisites:
 git clone https://github.com/Kentico/custom-element-devkit.git
 cd custom-element-devkit
 git clone https://github.com/Simply007/kc-tui-editor-custom-element.git ./client/custom-elements/KCTuiEditor
-npm install --save tui-editor
+npm install --save tui-editor@^1.3.0
 npm start -- -hw
 ```
 
