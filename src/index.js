@@ -13,11 +13,9 @@ import 'tui-chart/dist/tui-chart.min.css';
 import 'tui-editor/dist/tui-editor.min.css';
 import 'tui-color-picker/dist/tui-color-picker.min.css';
 
-import './editor.css';
+import './css/editor.css';
 
-import '../../shared/custom-module.css';
-
-import { tryParseJSON } from '../../../common/utils/utils';
+import './css/custom-element.css';
 
 let height = 400;
 let value = '';
@@ -29,10 +27,10 @@ function storeValue() {
 }
 
 function updateDisabled(disabled) {
-  document.querySelector('#reactapp').innerHTML = '';
+  document.querySelector('#editor').innerHTML = '';
   if (disabled) {
     editor = Editor.factory({
-      el: document.querySelector('#reactapp'),
+      el: document.querySelector('#editor'),
       height: `${height}px`,
       initialValue: value,
       viewer: true
@@ -40,7 +38,7 @@ function updateDisabled(disabled) {
   }
   else {
     editor = Editor.factory({
-      el: document.querySelector('#reactapp'),
+      el: document.querySelector('#editor'),
       height: `${height}px`,
       initialValue: value,
       viewer: false,

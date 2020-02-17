@@ -1,41 +1,47 @@
-# Kentico Cloud Toast UI editor custom element
+# Kentico Kontent Toast UI editor custom element
 
-Toast UI editor is based on [Toast UI Editor](https://ui.toast.com/tui-editor). It is a Markdown WYSIWYG Editor including GFM Standard + Chart & UML Extensible.
-All of the editor [extensions]()https://github.com/nhnent/tui.editor/blob/master/docs/using-extensions.md) are enabled in this custom element.
+[![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-kontent)
+
+This is a [custom element](https://docs.kontent.ai/tutorials/develop-apps/integrate/integrating-your-own-content-editing-features) for [Kentico Kontent](https://kontent.ai) that allows you to use the [Toast UI Editor](https://ui.toast.com/tui-editor). It is a Markdown WYSIWYG Editor including GFM Standard + Chart & UML Extensible.
+
+All of the editor [extensions](https://github.com/nhnent/tui.editor/blob/master/docs/using-extensions.md) are enabled in this custom element.
 
 ![Toast UI editor](ToastUIEditor.gif)
 
-## Usage
+## Setup
 
-If you want to use the Toast UI editor in your project in Kentico Cloud, follow these steps:
+1. Deploy the code to a secure public host
+    * See [deploying section](#Deploying) for a really quick option
+1. Follow the instructions in the [Kentico Kontent documentation](https://docs.kontent.ai/tutorials/develop-apps/integrate/integrating-your-own-content-editing-features#a-3--displaying-a-custom-element-in-kentico-kontent) to add the element to a content model.
+    * The `Hosted code URL` is where you deployed to in step 1
+    * No JSON parameters are necessary
 
-* In Kentico Cloud open Content types tab
-* Open / create a content model to which you want to add the Toast UI Editor
-* Add **Custom element** content element
-* Open configuration of the content element
-* Use following URL as Hosted code URL (HTTPS): https://Simply007.github.io/kc-tui-editor-custom-element/dist/index.html
+## Deploying
 
-## Installation
+Netlify has made this easy. If you click the deploy button below, it will guide you through the process of deploying it to Netlify and leave you with a copy of the repository in your GitHub account as well.
 
-Toast UI editor is in repository: https://github.com/Simply007/kc-tui-editor-custom-element.
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/Simply007/kontent-custom-element-toast-ui-editor)
 
-If you want to adjust the implementation, first download [Kentico Cloud Custom Elements Devkit](https://github.com/kentico/custom-element-devkit). This repository should be positioned within `/client/custom-elements` folder. For further instructions on devkit implementation, please refer to [Custom Element Devkit README](https://github.com/Kentico/custom-element-devkit/blob/master/readme.md).
+### Development
 
-### Get started
-
-You could use following commands to set up the development environment
+You can use following to set up the development environment
 
 Prerequisites:
 
 * Node.js
 * git
 
-```plain
-git clone https://github.com/Kentico/custom-element-devkit.git
-cd custom-element-devkit
-git clone https://github.com/Simply007/kc-tui-editor-custom-element.git ./client/custom-elements/KCTuiEditor
-npm install --save tui-editor@^1.3.0
-npm start -- -hw
+```console
+git clone https://github.com/Simply007/kc-tui-editor-custom-element
+cd kc-tui-editor-custom-element
+npm install
+npm run start
 ```
 
-Browse: https://localhost:3000/custom-elements/KCTuiEditor/wrap
+To build for production, run:
+
+```console
+npm run build
+```
+
+then deploy the contents of the `dist` folder.
